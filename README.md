@@ -37,6 +37,7 @@ Below are example queries and the images retrieved by the CLIP retrieval system.
 ![airplane](screenshots/large_machine_in_the_air.png)
 
 ---
+
 # How It Works
 
 The system uses **CLIP embeddings** to place images and text into the same vector space.
@@ -59,12 +60,13 @@ C --> G[Cosine Similarity Search]
 F --> G
 
 G --> H[Top-K Retrieved Images]
+```
 
 ---
 
-## Project Structure
+# Project Structure
 
-
+```
 clip-image-text-search/
 
 app.py                # Gradio web application
@@ -85,16 +87,23 @@ screenshots/          # example retrieval outputs
   animal_thats_green.png
   fast_thing_on_the_road.png
   large_machine_in_the_air.png
+```
+
+---
 
 # Running the Project Locally
 
 Install dependencies:
 
+```
 pip install -r requirements.txt
+```
 
 Run the application:
 
+```
 python app.py
+```
 
 This will launch the **Gradio interface** where you can type natural language queries and retrieve matching images.
 
@@ -104,7 +113,7 @@ This will launch the **Gradio interface** where you can type natural language qu
 
 - **CLIP (OpenAI)** – multimodal image-text embeddings  
 - **PyTorch** – deep learning framework  
-- **HuggingFace Transformers** – model loading  
+- **Hugging Face Transformers** – model loading  
 - **Gradio** – interactive ML demo interface  
 - **Cosine Similarity** – vector search for semantic retrieval  
 
