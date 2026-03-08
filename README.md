@@ -37,9 +37,6 @@ Below are example queries and the images retrieved by the CLIP retrieval system.
 ![airplane](screenshots/large_machine_in_the_air.png)
 
 ---
-
-# How It Works
-
 # How It Works
 
 The system uses **CLIP embeddings** to place images and text into the same vector space.
