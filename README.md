@@ -40,69 +40,64 @@ Below are example queries and the images retrieved by the CLIP retrieval system.
 
 # How It Works
 
+# How It Works
+
 The system uses **CLIP embeddings** to place images and text into the same vector space.
 
-Pipeline:
+Images are embedded using CLIP's **vision encoder**, while text queries are embedded using the **text encoder**.  
+Similarity between the two embeddings is computed using **cosine similarity** to retrieve the most relevant images.
 
+## Retrieval Pipeline
 
-Text Query
-↓
-CLIP Text Encoder
-↓
-Text Embedding
-↓
-Cosine Similarity
-↓
-Image Embedding Index
-↓
-Top-K Image Retrieval
+```mermaid
+graph TD
 
+A[Text Query] --> B[CLIP Text Encoder]
+B --> C[Text Embedding]
 
-Images are embedded using CLIP's **vision encoder**, while queries are embedded using the **text encoder**.  
-Because both embeddings exist in the same space, we can compare them using **cosine similarity**.
+D[Images] --> E[CLIP Vision Encoder]
+E --> F[Image Embeddings Index]
+
+C --> G[Cosine Similarity Search]
+F --> G
+
+G --> H[Top-K Retrieved Images]
 
 ---
 
-# Project Structure
+## Project Structure
 
 
 clip-image-text-search/
 
-app.py # Gradio web interface
-requirements.txt # project dependencies
+app.py                # Gradio web application
+requirements.txt      # project dependencies
 README.md
 
-src/ # ML pipeline scripts
-build_index.py
-search.py
-main.py
-main_v1_demo.py
+src/                  # ML pipeline scripts
+  build_index.py
+  search.py
+  main.py
+  main_v1_demo.py
 
-index/ # saved embeddings
-image_embeddings.npy
-labels.npy
+index/                # precomputed embeddings
+  image_embeddings.npy
+  labels.npy
 
-screenshots/ # example retrieval outputs
-animal_thats_green.png
-fast_thing_on_the_road.png
-large_machine_in_the_air.png
-
-
----
+screenshots/          # example retrieval outputs
+  animal_thats_green.png
+  fast_thing_on_the_road.png
+  large_machine_in_the_air.png
 
 # Running the Project Locally
 
 Install dependencies:
 
-
 pip install -r requirements.txt
-
 
 Run the application:
 
-
 python app.py
-
 
 This will launch the **Gradio interface** where you can type natural language queries and retrieve matching images.
 
