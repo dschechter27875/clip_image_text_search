@@ -6,6 +6,10 @@ Users can type descriptions such as *"a green animal"* or *"large machine in the
 
 This project demonstrates how modern multimodal models can perform **text-to-image semantic search using vector embeddings**.
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-HuggingFace-blue)](https://huggingface.co/spaces/dschechter27/clip-image-text-search)
+[![Python](https://img.shields.io/badge/Python-3.10+-brightgreen)]()
+[![Model](https://img.shields.io/badge/Model-OpenAI%20CLIP-red)]()
+[![License](https://img.shields.io/badge/License-MIT-yellow)]()
 ---
 
 # Live Demo
