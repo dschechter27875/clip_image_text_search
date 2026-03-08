@@ -111,4 +111,4 @@ with gr.Blocks() as demo:
         inputs=[query, top_k]
     )
 
-demo.launch(share=True)
+demo.launch()
